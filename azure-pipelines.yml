@@ -20,3 +20,14 @@ stages:
         echo Add other tasks to build, test, and deploy your project.
         echo See https://aka.ms/yaml
       displayName: 'Run a multi-line script'
+  - deployment: VMDeploy
+    displayName: FirstDeploy
+    environment:
+      name: Test
+      resourceType: VirtualMachine
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo my first deployment
+
